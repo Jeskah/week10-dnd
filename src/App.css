@@ -22,20 +22,32 @@
   left: 1em;
   text-align: right;
 }
+.ingredients:hover {
+  cursor: pointer;
+}
 
 .sandwich-stack {
   padding: 2em;
 }
+
 
 .drop-zone {
   height: 30em;
   width: 33em;
   border: dashed, rgba(255, 255, 255, 0.497), 3px;
   background-color: rgb(26, 26, 26);
-  cursor: pointer;
+
 }
 
 .drop-zone:hover {
-  background-color: rgba(255, 255, 255, 0.369);
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.013);
+
+}
+
+img {
+  position: fixed;
+  object-fit: contain;
+  width: 300px;
+  top: 55%;
+  right: 32%;
 }

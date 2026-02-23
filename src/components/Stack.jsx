@@ -7,23 +7,21 @@ export default function Stack({ items }) {
 
     return (
 <div>
-    <div
-        ref={setNodeRef}> 
+    <div ref={setNodeRef}> 
+        <h4>Drag and drop your filling below</h4>
 
-    <h4>Drag and drop your filling below</h4>
-                
     <div className="drop-zone">
-    <h6>DROP ZONE</h6>
+        <h6>DROP ZONE</h6>
 
-                {items.map((item, index) => (
+        {items.map((item, index) => (
             <div key={index}>
+                
                 <span>{item.emoji}</span>{item.name}
                 </div>
 ))}
-            
-            </div>
+            <img src="https://www.pngmart.com/files/8/Plate-Transparent-PNG-1.png"/>
 
-            
+            </div>
         </div>
     </div>
     )
