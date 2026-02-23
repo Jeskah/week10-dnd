@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import Stack from './components/Stack'
+import Ingredient from '.components/Ingredient'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 
