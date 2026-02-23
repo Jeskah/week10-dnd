@@ -27,6 +27,7 @@ export default function App() {
             emoji={ingredient.emoji}
           />
         ))}
+<Stack/>
       </div>
     </DndContext>
   )
