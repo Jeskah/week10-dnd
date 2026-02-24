@@ -3,6 +3,7 @@ import Stack from './components/Stack'
 import Ingredient from './components/Ingredient'
 import './App.css'
 import { DndContext } from "@dnd-kit/core";
+import Bin from './components/Bin';
 
 export default function App() {
 const [stackItems, setStackItems] = useState([]);
@@ -20,20 +21,27 @@ const ingredientList = [
   { id: 10, name: "Avocado", emoji: "🥑" },
 ]
 
-    function handleDragEnd(event) {
-        const { active, over } = event;
+   function handleDragEnd(event) {
+  const { active, over } = event
+  console.log('active:', active)
+  console.log('over:', over)
 
-        if (over && over.id === "drop-zone") {
-
-            const draggedItem = ingredientList.find(
-                (item) => item.id === active.id
-            );
-            if (draggedItem) {
-    setStackItems((prev) => [...prev, draggedItem]);
-        }
+  // dropping ingredient into sandwich
+  if (over && over.id === 'drop-zone') {
+    const draggedItem = ingredientList.find(
+      (item) => item.id === active.id
+    )
+    if (draggedItem) {
+      setStackItems((prev) => [...prev, draggedItem])
     }
-}
+  }
 
+  // dropping layer into bin
+  if (over && over.id === 'bin') {
+    const layerIndex = active.data.current.index
+    setStackItems((prev) => prev.filter((_, i) => i !== layerIndex))
+  }
+}
 
 
 return (
@@ -56,10 +64,9 @@ return (
         </div>
 
         <div className='sandwich-stack'>
-        <Stack 
-        items={stackItems} 
-        />
+        <Stack items={stackItems}/>
         </div>
+        <Bin/>
     </div>
     </DndContext>
 );
