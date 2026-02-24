@@ -1,15 +1,14 @@
-import { useDroppable } from '@dnd-kit/core'
+import { useDroppable } from "@dnd-kit/core";
 
 export default function Bin() {
-  const { setNodeRef, isOver } = useDroppable({
-    id: 'bin',
-  })
+  const { setNodeRef, isOver } = useDroppable({ id: "bin" });
 
   return (
     <div
       ref={setNodeRef}
-      className={`bin ${isOver ? 'bin-hover' : ''}`}>
-        🗑️
+      className={`bin ${isOver ? "bin-over" : ""}`}
+    >
+      🗑️
     </div>
-  )
+  );
 }

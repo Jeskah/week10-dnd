@@ -1,6 +1,6 @@
 import { useDraggable } from '@dnd-kit/core'
 
-export default function Ingredient({ id, name, emoji }) {
+export default function Ingredient({ id, name, img }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
   })
@@ -19,7 +19,7 @@ export default function Ingredient({ id, name, emoji }) {
       {...attributes}
       className="ingredient-card"
     >
-      <span className="ingredient-emoji">{emoji}</span>
+      <img src={img} alt={name} className="ingredient-img" />
       <span className="ingredient-name">{name}</span>
     </div>
   )
