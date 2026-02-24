@@ -45,9 +45,8 @@
 }
 
 img {
-  position: absolute;
+  position: relative;
   object-fit: contain;
   width: 300px;
-  top: 55%;
-  right: 23%;
+  top: 40%;
 }
