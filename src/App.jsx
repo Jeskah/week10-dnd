@@ -26,7 +26,6 @@ const ingredientList = [
   console.log('active:', active)
   console.log('over:', over)
 
-  // dropping ingredient into sandwich
   if (over && over.id === 'drop-zone') {
     const draggedItem = ingredientList.find(
       (item) => item.id === active.id
@@ -36,7 +35,6 @@ const ingredientList = [
     }
   }
 
-  // dropping layer into bin
   if (over && over.id === 'bin') {
     const layerIndex = active.data.current.index
     setStackItems((prev) => prev.filter((_, i) => i !== layerIndex))
