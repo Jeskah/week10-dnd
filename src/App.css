@@ -34,9 +34,10 @@
 .drop-zone {
   height: 30em;
   width: 33em;
-  border: dashed, rgba(255, 255, 255, 0.497), 3px;
+  border: dashed rgba(255, 255, 255, 0.497) 3px;
   background-color: rgb(26, 26, 26);
-
+  position: relative;
+  cursor: grabbing;
 }
 
 .drop-zone:hover {
@@ -45,12 +46,13 @@
 }
 
 img {
-  position: relative;
-  object-fit: contain;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 300px;
-  top: 40%;
+  object-fit: contain;
 }
-
 .bin {
   font-size: 3rem;
   padding: 1em;
@@ -62,4 +64,14 @@ img {
 .bin-hover {
   background-color: rgba(255, 0, 0, 0.2);
   border-color: red;
+}
+
+.sandwich-layer,
+.ingredient-card {
+  cursor: grab;
+}
+
+.sandwich-layer:active,
+.ingredient-card:active {
+  cursor: grabbing;
 }
