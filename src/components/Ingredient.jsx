@@ -12,6 +12,7 @@ export default function Ingredient({ id, name, img }) {
   };
 
   return (
+  <div className="filling-container">
     <div
       ref={setNodeRef}
       style={style}
@@ -21,6 +22,7 @@ export default function Ingredient({ id, name, img }) {
     >
       <img src={img} alt={name} className="ingredient-img" draggable={false} />
       <span className="ingredient-name">{name}</span>
+    </div>
     </div>
   );
 }

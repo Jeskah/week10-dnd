@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+.logo {
+  width: 350px;
+  padding-bottom: 2em;
+}
+
 .sandwich-app {
   display: flex;
   flex-direction: row;
@@ -17,9 +22,9 @@
 .ingredients {
   position: relative;
   gap: 1em;
+  padding-top: 9em;
   display: flex;
   flex-direction: column;
-  left: 1em;
   text-align: right;
 }
 
@@ -55,7 +60,7 @@
   border: 2px dashed rgba(255, 255, 255, 0.35);
   background: rgba(0, 0, 0, 0.15);
   position: sticky;
-  top: 20px;
+  top: 12.7em;
   z-index: 50;
 }
 
@@ -65,14 +70,17 @@
 }
 
 /* Ingredient cards */
+.filling-container {
+  height: 2em;
+}
+
 .ingredient-card {
   display: flex;
   align-items: center;
-  gap: 0.5em;
 }
 
 .ingredient-img {
-  width: 250px;
+  width: 90px;
   height: 80px;
   object-fit: contain;
 }
@@ -89,6 +97,7 @@
   cursor: grabbing;
 }
 
+
 /* Plate */
 .plate-img {
   position: absolute;
@@ -99,4 +108,11 @@
   object-fit: contain;
   z-index: 1;
   pointer-events: none;
+}
+
+.drop-zone .ingredient-img{
+  position: relative;
+  top: 3em;
+  height: 250px;
+  width: 300px;
 }

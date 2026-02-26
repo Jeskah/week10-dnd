@@ -4,6 +4,7 @@ import Ingredient from "./components/Ingredient";
 import "./App.css";
 import Bin from "./components/Bin";
 import { DndContext } from "@dnd-kit/core";
+import logo from "./assets/subway.png";
 
 export default function App() {
   const [stackItems, setStackItems] = useState([]);
@@ -20,7 +21,7 @@ export default function App() {
     { id: 9, name: "Cucumber", img: "/src/assets/Cucumber.png" },
     { id: 10, name: "Avocado", img: "/src/assets/Avocado.png" },
   ];
-
+  
   function handleDragEnd({ active, over }) {
     if (!over) return;
 
@@ -40,10 +41,9 @@ export default function App() {
   }
 
   return (
+
     <DndContext onDragEnd={handleDragEnd}>
-      <div>
-        <h1>BUILD YOUR SANDWICH</h1>
-      </div>
+        {/* <h1>BUILD YOUR SANDWICH</h1> */}
 
       <div className="sandwich-app">
         <div className="ingredients">
@@ -58,6 +58,11 @@ export default function App() {
         </div>
 
         <div className="sandwich-stack">
+  <img 
+  className="logo"
+  src={logo} 
+  alt="Logo"
+  />
           <Stack items={stackItems} />
         </div>
 

@@ -9,7 +9,7 @@ function SandwichLayer({ item, index }) {
   const style = {
     position: "absolute",
     left: "50%",
-    bottom: `${index * 55 + 80}px`,
+    bottom: `${index * 22 + 80}px`,
     transform: transform
       ? `translate(-50%, 0) translate(${transform.x}px, ${transform.y}px)`
       : "translate(-50%, 0)",
