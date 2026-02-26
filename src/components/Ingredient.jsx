@@ -4,12 +4,19 @@ export default function Ingredient({ id, name, img }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
   });
+import { useDraggable } from '@dnd-kit/core'
+
+export default function Ingredient({ id, name, img }) {
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id: id,
+  })
 
   const style = {
     transform: transform
       ? `translate(${transform.x}px, ${transform.y}px)`
       : undefined,
   };
+  }
 
   return (
     <div
@@ -23,4 +30,8 @@ export default function Ingredient({ id, name, img }) {
       <span className="ingredient-name">{name}</span>
     </div>
   );
+      <img src={img} alt={name} className="ingredient-img" />
+      <span className="ingredient-name">{name}</span>
+    </div>
+  )
 }

@@ -4,6 +4,8 @@ import Ingredient from "./components/Ingredient";
 import "./App.css";
 import Bin from "./components/Bin";
 import { DndContext } from "@dnd-kit/core";
+import { DndContext} from "@dnd-kit/core";
+
 
 export default function App() {
   const [stackItems, setStackItems] = useState([]);
@@ -38,7 +40,25 @@ export default function App() {
       }
     }
   }
+ function handleDragEnd({ active, over }) {
+  if (!over) return;
 
+ 
+  if (over.id === "drop-zone") {
+    const draggedItem = ingredientList.find((item) => item.id === active.id);
+    if (draggedItem) setStackItems((prev) => [...prev, draggedItem]);
+  }
+
+  
+  if (over.id === "bin") {
+    const index = active.data?.current?.index;
+    if (index !== undefined) {
+      setStackItems((prev) => prev.filter((_, i) => i !== index));
+    }
+  }
+}
+
+export default function App() {
   return (
     <DndContext onDragEnd={handleDragEnd}>
       <div>
@@ -54,6 +74,7 @@ export default function App() {
               name={item.name}
               img={item.img}
             />
+            <Ingredient key={item.id} id={item.id} name={item.name} img={item.img} />
           ))}
         </div>
 
