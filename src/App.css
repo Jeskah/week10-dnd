@@ -1,6 +1,103 @@
 #root {
-  max-width: 1280px;
+  padding: 2em;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+.sandwich-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  max-height: 100vh;
+  position: relative;
+}
+
+.ingredients {
+  position: relative;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+  left: 1em;
+  text-align: right;
+}
+.ingredients:hover {
+  cursor: pointer;
+}
+
+.sandwich-stack {
+  padding: 2em;
+}
+
+
+.drop-zone {
+  height: 30em;
+  width: 33em;
+  border: dashed rgba(255, 255, 255, 0.497) 3px;
+  background-color: rgb(26, 26, 26);
+  position: relative;
+  cursor: grabbing;
+}
+
+.drop-zone:hover {
+  background-color: rgba(255, 255, 255, 0.013);
+
+}
+
+
+
+.bin {
+  width: 140px;
+  height: 140px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  border: 2px dashed rgba(255,255,255,0.35);
+  background: rgba(0,0,0,0.15);
+  position: sticky;
+  top: 20px;
+  z-index: 50;
+}
+
+
+.bin-over {
+  border-color: rgba(255,255,255,0.85);
+  background: rgba(255,0,0,0.12);
+}
+.sandwich-layer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: grab;
+}
+
+.sandwich-layer:active {
+  cursor: grabbing;
+}
+.ingredient-img {
+  width: 250px;
+  height: 80px;
+  object-fit: contain;
+}
+.ingredient-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.plate-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sandwich-layer {
+  z-index: 2;
 }
