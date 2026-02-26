@@ -5,10 +5,6 @@ export default function Bin() {
 
   return (
     <div ref={setNodeRef} className={`bin ${isOver ? "bin-over" : ""}`}>
-    <div
-      ref={setNodeRef}
-      className={`bin ${isOver ? "bin-over" : ""}`}
-    >
       🗑️
     </div>
   );
