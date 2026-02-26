@@ -31,7 +31,6 @@ function SandwichLayer({ item, index }) {
         className="ingredient-img"
         draggable={false}
       />
-      <img src={item.img} alt={item.name} className="ingredient-img" draggable={false} />
     </div>
   );
 }
@@ -62,30 +61,3 @@ export default function Stack({ items }) {
     </div>
   );
 }
-     <div
-  ref={setNodeRef}
-  className={`drop-zone ${isOver ? "drop-zone--over" : ""}`}
->
-        <h6>DROP ZONE</h6>
-
-        {items.map((item, index) => (
-          <SandwichLayer
-            key={`${item.id}-${index}`} // stable-ish even if repeated ingredients
-            item={item}
-            index={index}
-          />
-        ))}
-
-        <img
-  className="plate-img"
-  src="https://www.pngmart.com/files/8/Plate-Transparent-PNG-1.png"
-  alt="Plate"
-  draggable={false}
-/>
-      </div>
-    </div>
-  );
-}
-
-
-// RANDOM LINE TO DELETED
