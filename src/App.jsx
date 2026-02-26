@@ -21,7 +21,7 @@ const ingredientList = [
   { id: 10, name: "Avocado", emoji: "🥑" },
 ]
 
-   function handleDragEnd(event) {
+  function handleDragEnd(event) {
   const { active, over } = event
   console.log('active:', active)
   console.log('over:', over)
