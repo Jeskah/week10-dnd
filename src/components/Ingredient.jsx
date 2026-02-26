@@ -1,3 +1,9 @@
+import { useDraggable } from "@dnd-kit/core";
+
+export default function Ingredient({ id, name, img }) {
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id,
+  });
 import { useDraggable } from '@dnd-kit/core'
 
 export default function Ingredient({ id, name, img }) {
@@ -9,6 +15,7 @@ export default function Ingredient({ id, name, img }) {
     transform: transform
       ? `translate(${transform.x}px, ${transform.y}px)`
       : undefined,
+  };
   }
 
   return (
@@ -19,6 +26,10 @@ export default function Ingredient({ id, name, img }) {
       {...attributes}
       className="ingredient-card"
     >
+      <img src={img} alt={name} className="ingredient-img" draggable={false} />
+      <span className="ingredient-name">{name}</span>
+    </div>
+  );
       <img src={img} alt={name} className="ingredient-img" />
       <span className="ingredient-name">{name}</span>
     </div>

@@ -4,6 +4,7 @@ export default function Bin() {
   const { setNodeRef, isOver } = useDroppable({ id: "bin" });
 
   return (
+    <div ref={setNodeRef} className={`bin ${isOver ? "bin-over" : ""}`}>
     <div
       ref={setNodeRef}
       className={`bin ${isOver ? "bin-over" : ""}`}

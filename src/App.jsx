@@ -3,6 +3,7 @@ import Stack from "./components/Stack";
 import Ingredient from "./components/Ingredient";
 import "./App.css";
 import Bin from "./components/Bin";
+import { DndContext } from "@dnd-kit/core";
 import { DndContext} from "@dnd-kit/core";
 
 
@@ -22,6 +23,23 @@ export default function App() {
     { id: 10, name: "Avocado", img: "/src/assets/Avocado.png" },
   ];
 
+  function handleDragEnd({ active, over }) {
+    if (!over) return;
+
+    if (over.id === "drop-zone") {
+      const draggedItem = ingredientList.find((item) => item.id === active.id);
+      if (draggedItem) {
+        setStackItems((prev) => [...prev, draggedItem]);
+      }
+    }
+
+    if (over.id === "bin") {
+      const layerIndex = active.data?.current?.index;
+      if (layerIndex !== undefined) {
+        setStackItems((prev) => prev.filter((_, i) => i !== layerIndex));
+      }
+    }
+  }
  function handleDragEnd({ active, over }) {
   if (!over) return;
 
@@ -50,6 +68,12 @@ export default function App() {
       <div className="sandwich-app">
         <div className="ingredients">
           {ingredientList.map((item) => (
+            <Ingredient
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              img={item.img}
+            />
             <Ingredient key={item.id} id={item.id} name={item.name} img={item.img} />
           ))}
         </div>

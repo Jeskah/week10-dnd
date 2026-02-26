@@ -22,6 +22,7 @@
   left: 1em;
   text-align: right;
 }
+
 .ingredients:hover {
   cursor: pointer;
 }
@@ -42,6 +43,9 @@
 
 .drop-zone:hover {
   background-color: rgba(255, 255, 255, 0.013);
+}
+
+/* Bin */
 
 }
 
@@ -54,6 +58,8 @@
   display: grid;
   place-items: center;
   font-size: 48px;
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.15);
   border: 2px dashed rgba(255,255,255,0.35);
   background: rgba(0,0,0,0.15);
   position: sticky;
@@ -61,6 +67,30 @@
   z-index: 50;
 }
 
+.bin-over {
+  border-color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 0, 0, 0.12);
+}
+
+/* Ingredient cards */
+.ingredient-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.ingredient-img {
+  width: 250px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Stack layers */
+.sandwich-layer {
+  position: absolute;
+  left: 50%;
+  cursor: grab;
+  z-index: 2;
 
 .bin-over {
   border-color: rgba(255,255,255,0.85);
@@ -76,6 +106,8 @@
 .sandwich-layer:active {
   cursor: grabbing;
 }
+
+/* Plate */
 .ingredient-img {
   width: 250px;
   height: 80px;
